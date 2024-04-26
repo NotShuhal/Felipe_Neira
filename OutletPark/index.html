@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Prototipo</title>
+    <title>Viña Outlet Park</title> 
     <style>
         /* Estilos generales */
         body {
@@ -12,7 +12,7 @@
             font-family: Arial, sans-serif;
             background-color: #e6cdeb;
         }
-        /* Estilos para el menú */
+        /* Estilos para el menú horizontal */
         nav {
             background-color: #333;
             color: white;
@@ -23,7 +23,15 @@
             color: white;
             text-decoration: none;
             margin: 0 10px;
+            transition:transform 0.3s ease-in-out;
         }
+        
+        
+        nav a:hover {
+            transform: scale(1.1);
+        }
+
+
         /* Estilos para las imágenes que cambian */
         .slider {
             width: 800px;
@@ -53,8 +61,13 @@
         }
         .section img {
             width: 400px; /* Tamaño de las imágenes de tiendas y panoramas */
+            height: auto;
             margin: 0 10px;
             cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .section img:hover {
+            transform: scale(1.1);
         }
         /* Estilos para el mapa de ubicación */
         .map {
@@ -155,3 +168,4 @@
     </script>
 </body>
 </html>
+
