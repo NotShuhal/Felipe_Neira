@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Prototipo</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e6cdeb;
+        }
+        /* Estilos para el menú */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        /* Estilos para las imágenes que cambian */
+        .slider {
+            width: 800px;
+            overflow: hidden;
+            position: relative;
+            height: 600px;
+            background-color: #ccc;
+            margin-left: 500px;
+        }
+        .slide-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            margin-left: -100px; /* Espacio extra a la izquierda */
+        }
+        .slide {
+            width: calc(100% + 200px); /* Aumenta el ancho de cada imagen */
+            flex-shrink: 0;
+        }
+        /* Estilos para los botones de tiendas y panoramas */
+        .section {
+            text-align: left; /* Títulos a la izquierda */
+            margin-top: 20px;
+            padding-left: 20px; /* Añade espacio a la izquierda */
+        }
+        .section h2 {
+            font-family: "Arial", serif; /* Cambia la fuente */
+        }
+        .section img {
+            width: 400px; /* Tamaño de las imágenes de tiendas y panoramas */
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        /* Estilos para el mapa de ubicación */
+        .map {
+            display: block;
+            margin: auto;
+            width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+            width: 800px; /* Máximo ancho de 800px */
+            margin-top: 20px;
+        }
+        /* Estilos para la zona de información */
+        .info {
+            background-color: purple;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        .transportation {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .transportation .box {
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#tiendas">Tiendas</a>
+        <a href="#panoramas">Panoramas</a>
+        <a href="#ubicacion">Ubicación</a>
+    </nav>
+
+    <div class="slider">
+        <div class="slide-wrapper">
+            <img class="slide" src="img/numero-1-letras-y-numeros-numeros-11679189.jpg" alt="Imagen 1">
+            <img class="slide" src="img/numero-2-letras-y-numeros-numeros-10452244.jpg" alt="Imagen 2">
+            <img class="slide" src="img/numero-3-letras-y-numeros-numeros-10196251.jpg" alt="Imagen 3">
+        </div>
+    </div>
+
+    <div id="tiendas" class="section">
+        <h2>Tiendas</h2>
+        <a href="#tienda1"><img src="img/businessman-isolated-illustration-ai-generative-free-photo.jpg" alt="Tienda 1"></a>
+        <a href="#tienda2"><img src="img/confident-young-woman.jpg" alt="Tienda 2"></a>
+        <a href="#tienda3"><img src="img/depositphotos_133078960-stock-photo-cute-smiling-boy.jpg" alt="Tienda 3"></a>
+        <a href="#tienda4"><img src="img/istockphoto-1312439845-612x612.jpg" alt="Tienda 4"></a>
+    </div>
+
+    <div id="panoramas" class="section">
+        <h2>Panoramas</h2>
+        <a href="#panorama1"><img src="img/official-disney-princesses.jpg" alt="Panorama 1"></a>
+        <a href="#panorama2"><img src="img/513GpCd+-6L._AC_UF894,1000_QL80_.jpg" alt="Panorama 2"></a>
+        <a href="#panorama3"><img src="img/61a11e43c231e946831570.jpeg" alt="Panorama 3"></a>
+        <a href="#panorama4"><img src="img/comida-rapida-a-domicilo-1200x900.jpg" alt="Panorama 4"></a>
+        <a href="#panorama5"><img src="img/IMG_4304.jpg" alt="Panorama 5"></a>
+        <a href="#panorama6"><img src="img/Las-Motos-con-Mejor-Precio-de-Reventa-en-Chile-2023.jpg" alt="Panorama 6"></a>
+        <a href="#panorama7"><img src="img/proveedores-de-zapatos-para-dama.jpg" alt="Panorama 7"></a>
+    </div>
+
+    <div id="ubicacion" class="section">
+        <h2>Ubicación de las Tiendas</h2>
+        <img class="map" src="img/90_sin_titulo_20240425224414.png" alt="Mapa de Ubicación">
+    </div>
+
+    <div class="info">
+        <h2>Información adicional</h2>
+        <div class="transportation">
+            <div class="box">214 - 211 - 202</div>
+            <div class="box">401 - 406 - 410 - 411</div>
+            <div class="box">305</div>
+            <div class="box">305</div>
+        </div>
+    </div>
+
+    <script>
+        // Script para el slider de imágenes
+        const slides = document.querySelectorAll('.slide');
+        const slideWrapper = document.querySelector('.slide-wrapper');
+        const slideWidth = slides[0].clientWidth;
+        let counter = 1;
+
+        setInterval(() => {
+            slideWrapper.style.transform = `translateX(-${slideWidth * counter}px)`;
+            counter++;
+            if (counter === slides.length) {
+                counter = 0;
+            }
+        }, 4000); // Cambiar imagen cada 4 segundos
+    </script>
+</body>
+</html>
